@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: young-hummingbird-python-gitops
+  description: This is GitOps manifest for young-hummingbird-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: young-hummingbird-python
+    janus-idp.io/tekton: young-hummingbird-python 
+    backstage.io/kubernetes-id: young-hummingbird-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:young-hummingbird-python

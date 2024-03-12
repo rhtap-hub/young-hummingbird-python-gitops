@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: young-hummingbird-python
+  janus-idp.io/tekton: young-hummingbird-python
+  backstage.io/kubernetes-id: young-hummingbird-python
+  backstage.io/kubernetes-namespace: flavius-e2e 
+  app.kubernetes.io/part-of: young-hummingbird-python
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
